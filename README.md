@@ -113,6 +113,8 @@ Backend runs on:
 arduino
 Copy code
 http://localhost:5000
+
+
 2️⃣ Frontend Setup
 bash
 Copy code
@@ -185,25 +187,3 @@ Harsh Raj
 
 📜 License
 This project is for educational and evaluation purposes.
-
-yaml
-Copy code
-
----
-
-# 🧭 STEP 2: Save the File
-
-Make sure:
-- File name is exactly `README.md`
-- Saved at **project root**
-
----
-
-# 🧭 STEP 3: Commit README
-
-Run in terminal:
-
-```powershell
-git add README.md
-git commit -m "docs: update complete project README"
-git push
