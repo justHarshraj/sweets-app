@@ -88,8 +88,6 @@ sweets-app/
 │
 └── README.md
 
-yaml
-Copy code
 
 ---
 
@@ -101,30 +99,31 @@ Copy code
 cd backend
 npm install
 npm run dev
+
 Create a .env file inside backend:
 
-env
-Copy code
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=5000
+
+
 Backend runs on:
 
-arduino
-Copy code
 http://localhost:5000
+
+
 2️⃣ Frontend Setup
-bash
-Copy code
 cd frontend
 npm install
 npm start
+
+
 Frontend runs on:
 
-arduino
-Copy code
 http://localhost:3000
+
 🔑 Admin Access (Important)
+
 To make a user an Admin:
 
 Go to MongoDB Atlas
@@ -135,25 +134,27 @@ Collection: users
 
 Change:
 
-json
-Copy code
 "role": "user"
+
+
 to
 
-json
-Copy code
 "role": "admin"
+
+
 Save
 
 Logout and login again to refresh JWT
 
 🧪 API Endpoints
 Auth
+
 POST /api/auth/register
 
 POST /api/auth/login
 
 Sweets
+
 POST /api/sweets (Admin)
 
 GET /api/sweets
@@ -165,11 +166,13 @@ PUT /api/sweets/:id (Admin)
 DELETE /api/sweets/:id (Admin)
 
 Inventory
+
 POST /api/sweets/:id/purchase
 
 POST /api/sweets/:id/restock (Admin)
 
 📌 Highlights
+
 Clean RESTful API design
 
 Secure JWT authentication
@@ -181,29 +184,9 @@ Proper inventory handling
 Modular and maintainable codebase
 
 👨‍💻 Author
+
 Harsh Raj
 
 📜 License
+
 This project is for educational and evaluation purposes.
-
-yaml
-Copy code
-
----
-
-# 🧭 STEP 2: Save the File
-
-Make sure:
-- File name is exactly `README.md`
-- Saved at **project root**
-
----
-
-# 🧭 STEP 3: Commit README
-
-Run in terminal:
-
-```powershell
-git add README.md
-git commit -m "docs: update complete project README"
-git push
