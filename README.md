@@ -79,6 +79,21 @@ MongoDB connection string and JWT secret should be stored in a .env file inside 
 
 Admin role can be assigned directly in the database for testing.
 
+## 🤖 My AI Usage
+
+I used ChatGPT as an AI assistant during development.
+
+### How I used AI
+- Generated initial backend and frontend boilerplate
+- Helped debug MongoDB and JWT issues
+- Assisted with test case writing using Jest and Supertest
+- Helped structure the README and project workflow
+
+### Reflection
+AI significantly improved my productivity, but all logic,
+debugging, and final decisions were made and validated by me.
+
+
 Author
 
 Harsh Raj
