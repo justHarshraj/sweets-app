@@ -12,8 +12,4 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/sweets", sweetRoutes);
 
-app.get("/", (req, res) => {
-  res.json({ message: "Sweets API is running" });
-});
-
 module.exports = app;

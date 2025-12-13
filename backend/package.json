@@ -7,6 +7,11 @@
     "dev": "nodemon src/server.js",
     "test": "jest --runInBand"
   },
+  "scripts": {
+  "dev": "nodemon src/server.js",
+  "test": "jest --runInBand"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -25,3 +30,4 @@
     "supertest": "^7.1.4"
   }
 }
+
