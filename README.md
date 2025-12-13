@@ -1,119 +1,121 @@
-# 🍬 Sweets Management Application
+🍬 Sweet Shop Management System (TDD Kata)
 
-A full-stack Sweets Management Application built with **Node.js, Express, MongoDB, and React**.  
-The app supports **user authentication, role-based authorization (Admin/User), sweets inventory management, and purchase functionality**.
+A full-stack Sweet Shop Management System built as part of a TDD kata, demonstrating backend API design, frontend SPA development, authentication, role-based access control, automated testing, and responsible AI usage.
 
----
+🚀 Tech Stack
+Backend
 
-## 🚀 Features
+Node.js
 
-### 🔐 Authentication & Authorization
-- User registration and login
-- JWT-based authentication
-- Role-based access control (User / Admin)
+Express.js
 
----
+MongoDB (MongoDB Atlas)
 
-### 🍭 Sweets Management (Protected APIs)
-- Add a new sweet (Admin)
-- View all available sweets
-- Search sweets by name, category, or price range
-- Update sweet details (Admin)
-- Delete a sweet (Admin)
+JWT Authentication
 
-Each sweet contains:
-- Unique ID
-- Name
-- Category
-- Price
-- Quantity in stock
+Jest + Supertest (Testing)
 
----
+Frontend
 
-### 📦 Inventory Management
-- Purchase a sweet (quantity decreases)
-- Purchase button disabled when stock is zero
-- Restock sweets (Admin only)
+React
 
----
+React Router
 
-### 🖥 Frontend (SPA)
-- Login & Registration pages
-- Dashboard displaying all sweets
-- Purchase button for users
-- Admin controls (restock & delete)
-- Protected routes
-- Clean and responsive UI
+Axios
 
----
+Context API
 
-## 🛠 Tech Stack
+Tools
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB (Atlas)
-- Mongoose
-- JWT (JSON Web Tokens)
-- bcrypt
+Git & GitHub
 
-### Frontend
-- React
-- Axios
-- React Router DOM
+Postman
 
----
+VS Code
 
-## 📂 Project Structure
+✨ Features
+👤 Authentication
 
+User Registration
+
+User Login
+
+JWT-based authentication
+
+Role-based access (User / Admin)
+
+🍭 Sweets Management
+
+View all sweets
+
+Search sweets by name, category, price range
+
+Purchase sweets (quantity decreases)
+
+Purchase button disabled when stock is 0
+
+🛠️ Admin Features
+
+Add new sweets
+
+Update sweet details
+
+Delete sweets
+
+Restock sweets
+
+📁 Project Structure
 sweets-app/
 │
 ├── backend/
-│ ├── src/
-│ │ ├── controllers/
-│ │ ├── models/
-│ │ ├── routes/
-│ │ ├── middleware/
-│ │ ├── config/
-│ │ └── server.js
-│ └── package.json
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   ├── tests/
+│   │   └── app.js
+│   ├── screenshots/
+│   └── package.json
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── api/
-│ │ ├── pages/
-│ │ ├── context/
-│ │ └── App.js
-│ └── package.json
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── components/
+│   │   └── App.js
+│   └── package.json
 │
 └── README.md
 
+⚙️ Setup Instructions
+1️⃣ Clone the Repository
+git clone https://github.com/<your-username>/sweets-app.git
+cd sweets-app
 
----
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Backend Setup
-
-```bash
+2️⃣ Backend Setup
 cd backend
 npm install
-npm run dev
 
-Create a .env file inside backend:
 
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+Create a .env file:
+
 PORT=5000
+MONGO_URI=your_mongodb_atlas_uri
+JWT_SECRET=your_secret_key
+
+
+Run backend:
+
+npm run dev
 
 
 Backend runs on:
 
 http://localhost:5000
 
-
-2️⃣ Frontend Setup
-cd frontend
+3️⃣ Frontend Setup
+cd ../frontend
 npm install
 npm start
 
@@ -122,71 +124,117 @@ Frontend runs on:
 
 http://localhost:3000
 
-🔑 Admin Access (Important)
+🧪 Test-Driven Development (TDD Evidence)
+🧠 Testing Strategy
 
-To make a user an Admin:
+Unit tests written using Jest and Supertest
 
-Go to MongoDB Atlas
+Database layer mocked to avoid flaky integration tests
 
-Open database: sweetsDB
+Business logic and API contracts verified
 
-Collection: users
+Role-based access tested (User vs Admin)
 
-Change:
+📌 Test Coverage
 
-"role": "user"
+Authentication API
 
+Sweets API
 
-to
+Inventory (Purchase & Restock)
 
-"role": "admin"
+▶️ Run Tests
+cd backend
+npm test
 
+✅ Test Results
 
-Save
+All test suites pass successfully.
 
-Logout and login again to refresh JWT
+📸 Test Report Screenshot:
 
-🧪 API Endpoints
-Auth
+📷 Application Screenshots
+🔐 Login Page
 
-POST /api/auth/register
+📝 Register Page
 
-POST /api/auth/login
+🍬 User Dashboard
 
-Sweets
+🛠️ Admin Controls
 
-POST /api/sweets (Admin)
+(Add your screenshots in the screenshots/ folder and update paths if needed.)
 
-GET /api/sweets
+🤖 My AI Usage
 
-GET /api/sweets/search
+AI tools were used responsibly and transparently during development.
 
-PUT /api/sweets/:id (Admin)
+🧠 Tools Used
 
-DELETE /api/sweets/:id (Admin)
+ChatGPT
 
-Inventory
+🛠️ How AI Helped
 
-POST /api/sweets/:id/purchase
+Generating initial boilerplate code
 
-POST /api/sweets/:id/restock (Admin)
+Debugging backend issues
 
-📌 Highlights
+Designing API structure
 
-Clean RESTful API design
+Writing unit tests
 
-Secure JWT authentication
+Improving README documentation
 
-Role-based UI rendering
+✍️ What I Did Myself
 
-Proper inventory handling
+Implemented full application logic
 
-Modular and maintainable codebase
+Designed frontend UI and state management
 
-👨‍💻 Author
+Integrated backend & frontend
+
+Fixed bugs surfaced by tests
+
+Ensured role-based access control
+
+Verified application manually using Postman & UI
+
+🔍 Reflection
+
+AI significantly improved productivity by speeding up repetitive tasks and offering debugging guidance. However, all core decisions, integration, and final implementation were done manually, ensuring full understanding and ownership of the code.
+
+📦 Deliverables Checklist
+
+✔ Public GitHub repository
+✔ Backend REST API
+✔ Frontend SPA
+✔ Authentication & Authorization
+✔ Automated Tests
+✔ Test Report
+✔ Screenshots
+✔ AI Usage Disclosure
+
+🌟 Optional Enhancements
+
+Deployment on Vercel / Netlify / Render
+
+CI pipeline with GitHub Actions
+
+Improved UI styling
+
+👤 Author
 
 Harsh Raj
 
-📜 License
+🏁 Final Note
 
-This project is for educational and evaluation purposes.
+This project demonstrates real-world full-stack development, clean coding, testing discipline, and ethical AI usage.
+
+✅ Submission-ready
+🚀 Interview-ready
+
+![alt text](backend/screenshots/test-report-sweets.png)
+
+![alt text](backend/screenshots/test-report-auth.png)
+
+![alt text](backend/screenshots/test-report-final.png)
+
