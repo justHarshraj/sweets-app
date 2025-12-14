@@ -1,98 +1,138 @@
-# Sweet Shop Management System
+### SWEET SHOP MANAGEMENT SYSTEM 🍬
 
-A full-stack Sweet Shop Management System built using Node.js, Express, MongoDB, and React.
+🎯 PROJECT OVERVIEW
 
-This project supports user authentication, role-based access (Admin/User), sweets inventory management, and purchasing functionality.
+Sweet Shop Management System is a full stack web application that allows users to browse, purchase, and manage sweets.
+It supports authentication, role based access control, inventory management, and a modern user friendly dashboard.
 
----
+This project is built following Test Driven Development principles and modern software engineering best practices.
 
-## Tech Stack
+🛠️ TECHNOLOGY STACK
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB (Atlas)
-- JWT Authentication
+NodeJS
+ExpressJS
+MongoDB
+Mongoose
+JWT Authentication
 
 ### Frontend
-- React
-- React Router
-- Axios
+ReactJS
+Axios
+React Router
 
----
+Testing
+Jest
+Supertest
 
-## Features
+Tools
+Git
+GitHub
+Postman
 
-- User Registration & Login
-- JWT-based Authentication
-- View all available sweets
-- Purchase sweets (stock decreases)
-- Admin-only features:
-  - Add sweets
-  - Update sweets
-  - Delete sweets
-  - Restock sweets
+🔐 AUTHENTICATION FEATURES
 
----
+User registration
+User login
+JWT based authentication
+Protected API routes
+Role based access control for admin users
 
-## Project Structure
+🍭 SWEET MANAGEMENT FEATURES
 
-sweets-app/
-├── backend/
-│ ├── src/
-│ ├── package.json
-│
-├── frontend/
-│ ├── src/
-│ ├── package.json
-│
-└── README.md
+View all available sweets
+Add new sweets admin only
+Update sweet details admin only
+Delete sweets admin only
+Search sweets by name
+Filter sweets by category and price
+Purchase sweets with live stock update
+Disable purchase when stock is zero
 
+📦 INVENTORY MANAGEMENT
 
----
+Purchase sweets and decrease stock
+Restock sweets admin only
+Prevent purchase when stock is unavailable
+Live inventory update on dashboard
 
-## How to Run Locally
+🧪 TEST DRIVEN DEVELOPMENT
 
-### Backend
+This project follows Test Driven Development principles.
 
-```bash
-cd backend
-npm install
-npm run dev
+Test coverage includes
+Authentication APIs
+Sweet management APIs
+Inventory purchase and restock APIs
 
+All tests pass successfully using Jest and Supertest.
 
-Backend runs on:
-http://localhost:5000
+🖥️ FRONTEND USER EXPERIENCE
 
-Frontend
-cd frontend
-npm install
-npm start
+Clean and responsive UI
+Sweet cards layout
+Search and filter bar
+Admin dashboard controls
+Real time inventory updates
+User friendly alerts and confirmations
 
+📸 SCREENSHOTS
 
-Frontend runs on:
-http://localhost:3000
+Login Screen
+Register Screen
+Dashboard View
+Test Report
 
-Notes
+All screenshots are available in the screenshots folder.
 
-MongoDB connection string and JWT secret should be stored in a .env file inside the backend folder.
+⚙️ HOW TO RUN LOCALLY
 
-Admin role can be assigned directly in the database for testing.
+Clone the repository
+Install backend dependencies
+Configure environment variables
+Start backend server
+Install frontend dependencies
+Start frontend server
+Open browser and explore the app
 
-## 🤖 My AI Usage
+🤖 MY AI USAGE
 
-I used ChatGPT as an AI assistant during development.
+I used AI tools such as ChatGPT during development to assist with
 
-### How I used AI
-- Generated initial backend and frontend boilerplate
-- Helped debug MongoDB and JWT issues
-- Assisted with test case writing using Jest and Supertest
-- Helped structure the README and project workflow
+Designing REST API structure
+Writing and improving backend logic
+Creating and refining Jest test cases
+Debugging authentication and database issues
+Improving frontend component structure
+Enhancing UI and user experience
 
-### Reflection
-AI significantly improved my productivity, but all logic,
-debugging, and final decisions were made and validated by me.
+All AI generated suggestions were reviewed and manually implemented.
+AI helped improve productivity and code quality while maintaining full ownership of the final solution.
 
+📁 PROJECT STRUCTURE
+
+Backend folder contains API logic, database models, routes, controllers, middleware, and tests
+Frontend folder contains React components, pages, context, and styles
+Screenshots folder contains UI and test evidence
+
+🚀 FUTURE IMPROVEMENTS
+
+Deployment to cloud platforms
+Pagination and sorting
+Improved UI animations
+Order history tracking
+
+🏁 FINAL NOTE
+
+This project demonstrates strong fundamentals in
+Backend API development
+Frontend SPA design
+Authentication and authorization
+Test Driven Development
+Git and version control
+Responsible AI usage
+
+Thank you for reviewing this project 🍀
 
 Author
 
