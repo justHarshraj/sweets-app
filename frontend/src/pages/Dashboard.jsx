@@ -1,17 +1,27 @@
 import { useEffect, useState, useContext } from "react";
 import api from "../api/axios";
 import AuthContext from "../context/AuthContext";
+import SweetCard from "../components/SweetCard";
+import SearchBar from "../components/SearchBar";
+import AdminSweetForm from "../components/AdminSweetForm";
 
 function Dashboard() {
   const [sweets, setSweets] = useState([]);
   const [error, setError] = useState("");
   const { user } = useContext(AuthContext);
 
+  const [filters, setFilters] = useState({
+    name: "",
+    category: "",
+    minPrice: "",
+    maxPrice: "",
+  });
+
   const fetchSweets = async () => {
     try {
       const res = await api.get("/sweets");
       setSweets(res.data);
-    } catch (err) {
+    } catch {
       setError("Failed to load sweets");
     }
   };
@@ -31,11 +41,10 @@ function Dashboard() {
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this sweet?")) return;
-
     try {
       await api.delete(`/sweets/${id}`);
       fetchSweets();
-    } catch (err) {
+    } catch {
       alert("Delete failed");
     }
   };
@@ -43,52 +52,76 @@ function Dashboard() {
   const handleRestock = async (id) => {
     const amount = prompt("Enter restock amount:");
     if (!amount) return;
-
     try {
       await api.post(`/sweets/${id}/restock`, {
-        amount: Number(amount),
+        quantity: Number(amount),
       });
       fetchSweets();
-    } catch (err) {
+    } catch {
       alert("Restock failed");
     }
   };
 
-  return (
-    <div>
-      <h2>Available Sweets</h2>
+  const handleAddSweet = async (data) => {
+    try {
+      await api.post("/sweets", data);
+      fetchSweets();
+    } catch {
+      alert("Failed to add sweet");
+    }
+  };
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+  const filteredSweets = sweets.filter((sweet) => {
+    const matchesName = sweet.name
+      .toLowerCase()
+      .includes(filters.name.toLowerCase());
 
-      {sweets.length === 0 && <p>No sweets available</p>}
+    const matchesCategory = sweet.category
+      .toLowerCase()
+      .includes(filters.category.toLowerCase());
 
-      <ul>
-        {sweets.map((sweet) => (
-          <li key={sweet._id}>
-            <strong>{sweet.name}</strong> | {sweet.category} | ₹{sweet.price} |
-            Stock: {sweet.quantity}{" "}
-            <button
-              onClick={() => handlePurchase(sweet._id)}
-              disabled={sweet.quantity === 0}
-            >
-              Purchase
-            </button>
-            {user?.role === "admin" && (
-              <>
-                {" "}
-                <button onClick={() => handleRestock(sweet._id)}>
-                  Restock
-                </button>
-                <button onClick={() => handleDelete(sweet._id)}>
-                  Delete
-                </button>
-              </>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    const matchesMin =
+      !filters.minPrice || sweet.price >= Number(filters.minPrice);
+
+    const matchesMax =
+      !filters.maxPrice || sweet.price <= Number(filters.maxPrice);
+
+    return matchesName && matchesCategory && matchesMin && matchesMax;
+  });
+
+ return (
+  <div className="dashboard-container">
+    <h1 className="page-title">🍬 Sweet Shop Dashboard</h1>
+
+    {user?.role === "admin" && (
+      <section className="admin-section">
+        <h2>Add New Sweet</h2>
+        <AdminSweetForm onSubmit={handleAddSweet} />
+      </section>
+    )}
+
+    <section className="search-section">
+      <SearchBar filters={filters} setFilters={setFilters} />
+    </section>
+
+    {error && <p className="error">{error}</p>}
+
+    <section className="sweet-grid">
+      {filteredSweets.map((sweet) => (
+        <SweetCard
+          key={sweet._id}
+          sweet={sweet}
+          onPurchase={handlePurchase}
+          onRestock={handleRestock}
+          onDelete={handleDelete}
+          isAdmin={user?.role === "admin"}
+        />
+      ))}
+    </section>
+  </div>
+);
+
+
 }
 
 export default Dashboard;

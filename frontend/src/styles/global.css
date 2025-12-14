@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.dashboard-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+/* Admin section */
+.admin-section {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.admin-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-form input {
+  padding: 8px;
+  width: 160px;
+}
+
+.admin-form button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Search */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: white;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 180px;
+}
+
+/* Grid */
+.sweet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* Card */
+.sweet-card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.sweet-card h3 {
+  margin-top: 0;
+}
+
+.category {
+  color: #666;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.card-actions {
+  margin-top: 12px;
+}
+
+.card-actions button {
+  margin-right: 6px;
+  margin-top: 6px;
+  padding: 6px 12px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card-actions button:disabled {
+  background: #aaa;
+}
+
+.card-actions .danger {
+  background: #d32f2f;
+}
